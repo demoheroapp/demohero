@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DemoHero — Record the product. Be in the shot. Ship the demo.</title>
+  <meta name="description" content="DemoHero is a Mac-native recorder for product demos. Capture screen, camera, and voice in one take, then trim and export in minutes.">
+  <link rel="icon" href="demohero-icon.png" type="image/png">
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-elev: #141a2e;
+      --ink: #f4f6ff;
+      --muted: #a8b0c8;
+      --line: rgba(255, 255, 255, 0.1);
+      --accent: #5b7cff;
+      --accent-2: #7a5cff;
+      --record: #ff3b30;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      background:
+        radial-gradient(900px 480px at 15% -10%, rgba(91, 124, 255, 0.28), transparent 55%),
+        radial-gradient(700px 420px at 90% 0%, rgba(122, 92, 255, 0.22), transparent 50%),
+        var(--bg);
+      color: var(--ink);
+      line-height: 1.5;
+    }
+
+    a { color: inherit; }
+    main { width: min(920px, calc(100% - 40px)); margin: 0 auto; padding: 36px 0 72px; }
+
+    .top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 640;
+      letter-spacing: -0.02em;
+    }
+    .top img { width: 36px; height: 36px; border-radius: 9px; }
+
+    .hero { padding: 72px 0 56px; text-align: center; }
+    .hero-logo {
+      width: min(280px, 72vw);
+      height: auto;
+      margin: 0 auto 28px;
+      display: block;
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(36px, 6vw, 56px);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+    .download {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: white;
+      font-weight: 650;
+      text-decoration: none;
+      box-shadow: 0 10px 30px rgba(91, 124, 255, 0.35);
+    }
+    .download:hover { filter: brightness(1.06); }
+    .under-cta {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+    .note { margin-top: 10px; color: var(--muted); font-size: 0.88rem; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .card {
+      background: color-mix(in srgb, var(--bg-elev) 88%, white 4%);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px 22px 20px;
+    }
+    .card h2 {
+      margin: 0 0 8px;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+    }
+    .card p { margin: 0; color: var(--muted); }
+
+    .steps { margin-top: 28px; }
+    .steps ol {
+      margin: 0;
+      padding: 22px 22px 22px 44px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(20, 26, 46, 0.7);
+    }
+    .steps li { padding: 6px 0; }
+    .steps li::marker { color: var(--accent); font-weight: 700; }
+
+    .pricing { margin-top: 28px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 14px; }
+    .price-row { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-top: 1px solid var(--line); }
+    .price-row:first-of-type { border-top: 0; }
+    .tag {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(255, 59, 48, 0.14);
+      color: #ff8a84;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    footer {
+      margin-top: 48px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.92rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    footer a { color: var(--ink); }
+
+    @media (max-width: 720px) {
+      .grid, .pricing { grid-template-columns: 1fr; }
+      .hero { padding-top: 48px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="top">
+      <img src="demohero-icon.png" alt="">
+      DemoHero
+    </div>
+
+    <section class="hero">
+      <img class="hero-logo" src="demohero-logo.png" alt="DemoHero: a product window with a presenter bubble">
+      <h1>Record the product. Be in the shot. Ship the demo.</h1>
+      <a class="download" id="download-link" href="#mac-app-store">Download DemoHero Now!</a>
+      <p class="under-cta">Record your screen and yourself. Export a demo in minutes.</p>
+      <p class="note">Mac only · Coming to the Mac App Store</p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Screen, camera, and voice together</h2>
+        <p>Record a product walkthrough in one take. No second app, no lining up tracks by hand.</p>
+      </article>
+      <article class="card">
+        <h2>Be on camera without covering the UI</h2>
+        <p>Place a live circle or square on the capture. The presenter is part of the recording, not a layer you fight later.</p>
+      </article>
+      <article class="card">
+        <h2>Trim, frame, export</h2>
+        <p>Cut dead air, speed up a slow stretch, add padding, and hand off an MP4. That is the whole editor.</p>
+      </article>
+      <article class="card">
+        <h2>Stays on your Mac</h2>
+        <p>No DemoHero account and no cloud. Takes live in Movies until you export a copy.</p>
+      </article>
+    </section>
+
+    <section class="steps">
+      <ol>
+        <li>Pick a display, window, or region. Turn the camera and mic on if you want to be in the shot.</li>
+        <li>Record the walkthrough. Place the presenter so the product stays readable.</li>
+        <li>Trim, set the frame, export 720p — or unlock 1080p and 4K with Pro.</li>
+      </ol>
+    </section>
+
+    <section class="pricing">
+      <article class="card">
+        <span class="tag">Free</span>
+        <h2>Start shipping clips today</h2>
+        <p>Record and export at 720p, with a 10-minute cap. Enough to try the real product loop.</p>
+      </article>
+      <article class="card">
+        <h2>DemoHero Pro</h2>
+        <p>1080p and 4K export, plus recordings longer than 10 minutes.</p>
+        <div class="price-row"><span>Monthly</span><strong>$3.99</strong></div>
+        <div class="price-row"><span>Yearly</span><strong>$19.99</strong></div>
+        <div class="price-row"><span>Lifetime</span><strong>$49.99</strong></div>
+      </article>
+    </section>
+
+    <footer>
+      <span>© DemoHero. A Mac app for shipping product demos.</span>
+      <span>
+        <a href="PRIVACY.md">Privacy</a>
+        ·
+        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms</a>
+        ·
+        <a href="mailto:demohero@googlegroups.com">Support</a>
+      </span>
+    </footer>
+  </main>
+</body>
+</html>
